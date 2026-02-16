@@ -125,7 +125,7 @@ class ActionsComponent(QWidget):
 
     def _open_github(self):
         import webbrowser
-        webbrowser.open("https://github.com/PipeCalDev/ScreenPenVf") # Placeholder or real link
+        webbrowser.open("https://github.com/Pipecaldev/nixpen")
 
     def retranslateUi(self):
         # Update header text (finding QLabel child)
