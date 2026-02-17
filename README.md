@@ -59,6 +59,16 @@ The easiest way to run NixPen on most Linux distributions.
 ### Optional: System Integration
 For better desktop integration (application menu, icons, auto-updates), we recommend using **[AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher)**. It will automatically detect and integrate your AppImages.
 
+Alternatively, you can use our built-in script to integrate manually:
+1.  Download `install_system.sh` from the repository (or extract from source).
+2.  Make sure `NixPen-x86_64.AppImage` is in the same folder.
+3.  Run:
+    ```bash
+    chmod +x install_system.sh
+    ./install_system.sh
+    ```
+    This will move the AppImage to `~/Applications/`, create a desktop entry, and install the icon.
+
 ### Flatpak (Coming Soon)
 ### Arch (AUR) (Planned)
 
