@@ -45,5 +45,13 @@ Thumbs.db
 
 # ScreenPen specifics
 *.png
+!assets/*.png
 !src/ui/assets/*.png
 debug_output*.txt
+
+# Build / Release artifacts
+*.spec
+AppDir/
+*.AppImage
+appimagetool
+SHA256SUMS.txt
