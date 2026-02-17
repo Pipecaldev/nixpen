@@ -155,8 +155,8 @@ class ControlPanel(QMainWindow):
             screen = screens[index]
             geometry = screen.geometry()
             
-            # 1. Mover Canvas
-            self.canvas.setGeometry(geometry)
+            # 1. Mover y redimensionar Canvas (pixmap incluido)
+            self.canvas.setScreenGeometry(geometry)
             
             # 2. Mover Panel de Control (Centrado en la nueva pantalla)
             # Calcular posición centrada
