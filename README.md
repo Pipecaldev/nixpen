@@ -42,16 +42,22 @@ NixPen works on modern Linux distributions including:
 *   X11
 *   Wayland (via XWayland compatibility layer)
 
-## 📦 Installation
+## 📦 Installation (AppImage)
 
-### AppImage (Recommended)
+The easiest way to run NixPen on most Linux distributions.
 
-Download the latest release:
+1.  **Download** the latest `NixPen-x86_64.AppImage` from the [Releases](https://github.com/Pipecaldev/nixpen/releases) page.
+2.  **Make it executable**:
+    ```bash
+    chmod +x NixPen-x86_64.AppImage
+    ```
+3.  **Run**:
+    ```bash
+    ./NixPen-x86_64.AppImage
+    ```
 
-```bash
-chmod +x NixPen.AppImage
-./NixPen.AppImage
-```
+### Optional: System Integration
+For better desktop integration (application menu, icons, auto-updates), we recommend using **[AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher)**. It will automatically detect and integrate your AppImages.
 
 ### Flatpak (Coming Soon)
 ### Arch (AUR) (Planned)
