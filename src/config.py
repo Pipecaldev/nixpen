@@ -126,14 +126,14 @@ HELP_HTML_ES = HELP_CSS + """
 
 <h3>🎨 Colores</h3>
 <table>
-    <tr><td><span class="key">Ctrl+Shift+1</span></td><td class="desc">Rojo</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+2</span></td><td class="desc">Azul</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+3</span></td><td class="desc">Verde</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+4</span></td><td class="desc">Amarillo</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+5</span></td><td class="desc">Negro</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+6</span></td><td class="desc">Blanco</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+7</span></td><td class="desc">Naranja</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+8</span></td><td class="desc">Morado</td></tr>
+    <tr><td><span class="key">Ctrl+1</span></td><td class="desc">Rojo</td></tr>
+    <tr><td><span class="key">Ctrl+2</span></td><td class="desc">Azul</td></tr>
+    <tr><td><span class="key">Ctrl+3</span></td><td class="desc">Verde</td></tr>
+    <tr><td><span class="key">Ctrl+4</span></td><td class="desc">Amarillo</td></tr>
+    <tr><td><span class="key">Ctrl+5</span></td><td class="desc">Negro</td></tr>
+    <tr><td><span class="key">Ctrl+6</span></td><td class="desc">Blanco</td></tr>
+    <tr><td><span class="key">Ctrl+7</span></td><td class="desc">Naranja</td></tr>
+    <tr><td><span class="key">Ctrl+8</span></td><td class="desc">Morado</td></tr>
 </table>
 
 <h3>⚡ Otros</h3>
@@ -178,14 +178,14 @@ HELP_HTML_EN = HELP_CSS + """
 
 <h3>🎨 Colors</h3>
 <table>
-    <tr><td><span class="key">Ctrl+Shift+1</span></td><td class="desc">Red</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+2</span></td><td class="desc">Blue</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+3</span></td><td class="desc">Green</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+4</span></td><td class="desc">Yellow</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+5</span></td><td class="desc">Black</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+6</span></td><td class="desc">White</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+7</span></td><td class="desc">Orange</td></tr>
-    <tr><td><span class="key">Ctrl+Shift+8</span></td><td class="desc">Purple</td></tr>
+    <tr><td><span class="key">Ctrl+1</span></td><td class="desc">Red</td></tr>
+    <tr><td><span class="key">Ctrl+2</span></td><td class="desc">Blue</td></tr>
+    <tr><td><span class="key">Ctrl+3</span></td><td class="desc">Green</td></tr>
+    <tr><td><span class="key">Ctrl+4</span></td><td class="desc">Yellow</td></tr>
+    <tr><td><span class="key">Ctrl+5</span></td><td class="desc">Black</td></tr>
+    <tr><td><span class="key">Ctrl+6</span></td><td class="desc">White</td></tr>
+    <tr><td><span class="key">Ctrl+7</span></td><td class="desc">Orange</td></tr>
+    <tr><td><span class="key">Ctrl+8</span></td><td class="desc">Purple</td></tr>
 </table>
 
 <h3>⚡ Other</h3>

@@ -1,7 +1,8 @@
 from PyQt5.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, 
-                             QApplication, QSystemTrayIcon, QMenu, QAction, QGraphicsDropShadowEffect, QStackedLayout)
+                             QApplication, QSystemTrayIcon, QMenu, QAction, QGraphicsDropShadowEffect, QStackedLayout, QShortcut)
 from PyQt5.QtCore import Qt, QPoint, QSize, QTimer
-from PyQt5.QtGui import QIcon, QColor, QKeySequence
+from PyQt5.QtGui import QIcon, QColor, QKeySequence, QCursor, QPixmap, QPainter
+import qtawesome as qta
 
 from src.config import *
 from src.ui.components.header import HeaderComponent
@@ -128,6 +129,13 @@ class ControlPanel(QMainWindow):
         self.vertical_toolbar.action_triggered.connect(self._on_vertical_action_triggered)
         self.vertical_toolbar.color_selected.connect(self._select_color_by_index)
 
+        # Color Shortcuts (Ctrl+Number) — usando QShortcut para que funcionen
+        # sin importar qué widget tenga el foco
+        for i in range(8):
+            shortcut = QShortcut(QKeySequence(f"Ctrl+{i+1}"), self)
+            shortcut.setContext(Qt.ApplicationShortcut)
+            shortcut.activated.connect(lambda idx=i: self._select_color_by_index(idx))
+
     def setup_initial_geometry(self):
         x, y = get_initial_position(DEFAULT_WIDTH, DEFAULT_WIDTH) # Placeholder height
         self.setGeometry(x, y, DEFAULT_WIDTH, 600) # Altura inicial aprox
@@ -139,7 +147,6 @@ class ControlPanel(QMainWindow):
 
     def _on_color_selected(self, color_code):
         self.canvas.setColor(QColor(color_code))
-        self.toolbar.update_icon_colors(color_code)
 
     def _select_color_by_index(self, index):
         # Selecciona color en color_grid simulando click
@@ -172,6 +179,7 @@ class ControlPanel(QMainWindow):
         if self.drawing_enabled != enabled:
             self.toggle_drawing()
 
+
     def toggle_drawing(self):
         self.drawing_enabled = not self.drawing_enabled
         
@@ -187,6 +195,21 @@ class ControlPanel(QMainWindow):
             
             self.canvas.show() # MOSTRAR TRAZOS
             
+            # Cambiar cursor a lápiz con borde blanco para visibilidad
+            pen_pixmap = QPixmap(32, 32)
+            pen_pixmap.fill(Qt.transparent)
+            p = QPainter(pen_pixmap)
+            # Borde blanco: dibujar ícono blanco en múltiples offsets
+            white_icon = qta.icon("fa5s.pen", color="white").pixmap(24, 24)
+            for dx, dy in [(-1,0),(1,0),(0,-1),(0,1),(-1,-1),(1,1),(-1,1),(1,-1)]:
+                p.drawPixmap(4 + dx, 4 + dy, white_icon)
+            # Ícono negro encima
+            black_icon = qta.icon("fa5s.pen", color="black").pixmap(24, 24)
+            p.drawPixmap(4, 4, black_icon)
+            p.end()
+            cursor = QCursor(pen_pixmap, 4, 28)
+            self.canvas.setCursor(cursor)
+
             # Sincronizar botones visualmente
             self.toolbar.btn_draw_on.setChecked(True)
             self.toolbar.btn_draw_off.setChecked(False)
@@ -195,6 +218,8 @@ class ControlPanel(QMainWindow):
             self.canvas.hide() # OCULTAR TRAZOS (Permite click-through total)
             
             self.canvas.setTool('cursor') # Resetear a cursor
+            self.canvas.unsetCursor() # Restaurar cursor por defecto
+            
             # Sincronizar botones visualmente
             self.toolbar.btn_draw_on.setChecked(False)
             self.toolbar.btn_draw_off.setChecked(True)
@@ -388,15 +413,6 @@ class ControlPanel(QMainWindow):
             elif key == Qt.Key_M: self._on_tool_changed('ellipse')
             elif key == Qt.Key_T: self._on_tool_changed('text')
             elif key == Qt.Key_S: self._on_tool_changed('spotlight')
-            
-            # Shortcuts para Colores (Ctrl+Shift+Número)
-            elif key == Qt.Key_1: self._select_color_by_index(0)
-            elif key == Qt.Key_2: self._select_color_by_index(1)
-            elif key == Qt.Key_3: self._select_color_by_index(2)
-            elif key == Qt.Key_4: self._select_color_by_index(3)
-            elif key == Qt.Key_5: self._select_color_by_index(4)
-            elif key == Qt.Key_6: self._select_color_by_index(5)
-            elif key == Qt.Key_7: self._select_color_by_index(6)
 
     # --- Lógica de Arrastre ventana principal ---
     def mousePressEvent(self, event):
