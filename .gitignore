@@ -45,7 +45,7 @@ Thumbs.db
 
 # ScreenPen specifics
 *.png
-!assets/*.png
+!assets/**/*.png
 !src/ui/assets/*.png
 debug_output*.txt
 
