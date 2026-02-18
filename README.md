@@ -31,7 +31,22 @@ NixPen aims to be:
 *   Focused
 *   Native to the Linux ecosystem
 
-## � Compatibility
+
+## 📸 Gallery
+
+![Interface Overview](assets/screenshots/demo_overview.png)
+**Distraction-free Canvas**: Experience a clean interface designed for focused annotation. Create shapes, arrows, and text on a dark or transparent background.
+
+![Control Panel](assets/screenshots/control_panel.png)
+**Powerful Control Panel**: Access all tools in one place. Switch between screens, toggle drawing mode, select shapes (lines, arrows, rectangles, ellipses), adjust stroke thickness, and pick from a vibrant color palette.
+
+![Floating Toolbar](assets/screenshots/floating_toolbar.png)
+**Quick Access Toolbar**: A minimized vertical toolbar for rapid tool switching without cluttering your workspace. Includes essential tools like Pencil, Eraser, Undo/Redo, and Screenshot.
+
+![Annotation Example](assets/screenshots/annotation_example.png)
+**Creative Annotation**: Highlight key areas, draw attention with arrows, and use freehand drawing to explain concepts effectively. Perfect for tutorials and presentations.
+
+##  Compatibility
 
 NixPen works on modern Linux distributions including:
 *   Ubuntu / Debian-based systems
